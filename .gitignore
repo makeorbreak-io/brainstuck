@@ -4,3 +4,10 @@
 .idea
 **/node_modules/*
 **/.firebaserc
+
+# Generated files.
+*.log
+*.pyc
+.DS_Store
+*~
+*.swp
