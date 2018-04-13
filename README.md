@@ -1,4 +1,4 @@
-### BrainStuck
+# BrainStuck
 
 ## Make or Break
 
