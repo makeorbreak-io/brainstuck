@@ -40,15 +40,15 @@ export class CanvasComponent implements OnInit {
     ],
   };
 
-  constructor(public canvasService: CanvasService) { }
+  constructor() { }
 
   addNode (label: string) {
     this.hierarchialGraph.nodes.push({id: label, label: label});
   }
 
   getData() {
-    const canvas = this.canvasService.getCanvas('test');
-    console.log(canvas);
+    //const canvas = this.canvasService.getCanvas('test');
+    //console.log(canvas);
   }
 
   ngOnInit() {

@@ -1,5 +1,10 @@
-<>
-<ngx-graph
+<mat-form-field class="full-width">
+  <input matInput placeholder="New Ideia" value="">
+</mat-form-field>
+<button mat-raised-button color="primary">Add</button>
+
+<div class="container">
+  <ngx-graph
   class="chart-container"
   [links]="hierarchialGraph.links"
   [nodes]="hierarchialGraph.nodes"
@@ -39,3 +44,5 @@
   </ng-template>
 
 </ngx-graph>
+
+</div>
