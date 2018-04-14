@@ -20,6 +20,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { CanvasComponent } from './canvas/canvas.component';
+import { MaterialModule } from './material.module';
 
 
 @NgModule({
@@ -40,6 +41,7 @@ import { CanvasComponent } from './canvas/canvas.component';
     BrowserAnimationsModule,
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features
+    MaterialModule
   ],
   providers: [AuthService, UserService, UserResolver, AuthGuard],
   bootstrap: [AppComponent]
