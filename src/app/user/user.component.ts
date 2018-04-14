@@ -10,7 +10,7 @@ import { FirebaseUserModel } from '../core/user.model';
   selector: 'page-user',
   templateUrl: 'user.component.html',
 })
-export class UserComponent implements OnInit{
+export class UserComponent implements OnInit {
 
   user: FirebaseUserModel = new FirebaseUserModel();
   profileForm: FormGroup;
@@ -19,7 +19,7 @@ export class UserComponent implements OnInit{
     public userService: UserService,
     public authService: AuthService,
     private route: ActivatedRoute,
-    private location : Location,
+    private location: Location,
     private fb: FormBuilder
   ) {
 
@@ -48,12 +48,4 @@ export class UserComponent implements OnInit{
     }, err => console.log(err))
   }
 
-  logout(){
-    this.authService.doLogout()
-    .then((res) => {
-      this.location.back();
-    }, (error) => {
-      console.log("Logout error", error);
-    });
-  }
 }
