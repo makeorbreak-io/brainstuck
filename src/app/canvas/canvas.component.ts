@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as shape from 'd3-shape';
 
 @Component({
   selector: 'app-canvas',
@@ -7,55 +8,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CanvasComponent implements OnInit {
 
-  nodes = [
-    {
-      id: 'start',
-      label: 'start'
-    }, {
-      id: '1',
-      label: 'Query ThreatConnect',
-    }, {
-      id: '2',
-      label: 'Query XForce',
-    }, {
-      id: '3',
-      label: 'Format Results'
-    }, {
-      id: '4',
-      label: 'Search Splunk'
-    }, {
-      id: '5',
-      label: 'Block LDAP'
-    }, {
-      id: '6',
-      label: 'Email Results'
-    }
-  ];
+  public colorScheme = {
+    domain: ['#5AA454', '#A10A28', '#C7B42C'], // or whatever colors you want
+  };
+  public curve: any = shape.curveLinear;
 
-  links = [
-    {
-      source: 'start',
-      target: '1',
-      label: 'links to'
-    }, {
-      source: 'start',
-      target: '2'
-    }, {
-      source: '1',
-      target: '3',
-      label: 'related to'
-    }, {
-      source: '2',
-      target: '4'
-    }, {
-      source: '2',
-      target: '6'
-    }, {
-      source: '3',
-      target: '5'
-    }
-  ];
-  
+
+  public hierarchialGraph = {
+    links: [  {
+        source: 'start',
+        target: '1',
+        label: 'links to'
+      }, {
+        source: 'start',
+        target: '2'
+      },
+    ],
+    nodes: [  {
+        id: 'start',
+        label: 'start'
+      }, {
+        id: '1',
+        label: 'Query ThreatConnect',
+      }, {
+        id: '2',
+        label: 'Query XForce',
+      }
+    ],
+  };
+
   constructor() { }
 
   ngOnInit() {
