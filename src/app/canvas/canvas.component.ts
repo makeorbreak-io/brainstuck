@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CanvasService } from '../Shared/Services/canvas.service';
+
 
 @Component({
   selector: 'app-canvas',
@@ -55,10 +57,16 @@ export class CanvasComponent implements OnInit {
       target: '5'
     }
   ];
-  
-  constructor() { }
+
+  constructor(public canvasService: CanvasService) { }
 
   ngOnInit() {
+    this.getData();
+  }
+
+  getData() {
+    const canvas = this.canvasService.getCanvas('test');
+    console.log(canvas);
   }
 
 }
