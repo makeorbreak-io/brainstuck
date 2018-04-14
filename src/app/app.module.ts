@@ -30,15 +30,9 @@ import { AppComponent } from './app.component';
     ReactiveFormsModule,
     RouterModule.forRoot(rootRouterConfig, { useHash: false }),
     AngularFireModule.initializeApp(environment.firebase),
-<<<<<<< HEAD
-    AngularFireDatabaseModule,
-    AngularFireAuthModule,
     NgxGraphModule,
-    NgbModule.forRoot()
-=======
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features
->>>>>>> a6f6a1492ab1d04eaca4f892fd0e005c3d5decfe
   ],
   providers: [AuthService, UserService, UserResolver, AuthGuard],
   bootstrap: [AppComponent]
