@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="./js/generator.js"></script> 
 </head>
 
 <body>
@@ -20,14 +21,17 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <div class="main-btn">Fun</div>
+                <div class="main-btn " onclick="writeWord()">Fun</div>
             </div>
             <div class="col-md-4">
-                <div class="main-btn">Useful</div>
+                <div class="main-btn" onclick="writeWord()">Useful</div>
             </div>
             <div class="col-md-4">
-                <div class="main-btn">Creative</div>
+                <div class="main-btn" onclick="writeWord()">Creative</div>
             </div>
+        </div>
+        <div id="word" class="row">
+
         </div>
     </div>
 </body>
