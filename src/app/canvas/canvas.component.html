@@ -1,7 +1,9 @@
 <ngx-graph
   class="chart-container"
-  [links]="links"
-  [nodes]="nodes">
+  [links]="hierarchialGraph.links"
+  [nodes]="hierarchialGraph.nodes"
+  [scheme]="colorScheme"
+  [curve]="curve">
 
   <ng-template #defsTemplate>
     <svg:marker id="arrow" viewBox="0 -5 10 10" refX="8" refY="0" markerWidth="4" markerHeight="4" orient="auto">
@@ -19,9 +21,19 @@
   <ng-template #linkTemplate let-link>
     <svg:g class="edge">
       <svg:path
+        class="line"
         stroke-width="2"
         marker-end="url(#arrow)" >
       </svg:path>
+      <svg:text class="edge-label" text-anchor="middle">
+        <textPath
+          class="text-path"
+          [attr.href]="'#' + link.id"
+          [style.dominant-baseline]="link.dominantBaseline"
+          startOffset="50%">
+          {{link.label}}
+        </textPath>
+      </svg:text>
     </svg:g>
   </ng-template>
 
