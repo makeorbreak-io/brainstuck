@@ -5,6 +5,7 @@ import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
 import { store } from './store'
 import firebase from 'firebase'
+import VueKonva from 'vue-konva'
 
 Vue.use(Vuetify)
 firebase.initializeApp({
@@ -13,6 +14,8 @@ firebase.initializeApp({
   databaseURL: 'https://brainstuck-65ca2.firebaseio.com',
   projectId: 'brainstuck-65ca2'
 })
+
+Vue.use(VueKonva)
 
 Vue.config.productionTip = false
 
