@@ -9,11 +9,13 @@ import * as shape from 'd3-shape';
 })
 export class CanvasComponent implements OnInit {
 
+  number: Number = 2;
+
   public colorScheme = {
     domain: ['#5AA454', '#A10A28', '#C7B42C'], // or whatever colors you want
   };
-  public curve: any = shape.curveLinear;
 
+  public curve: any = shape.curveLinear;
 
   public hierarchialGraph = {
     links: [  {
@@ -40,13 +42,18 @@ export class CanvasComponent implements OnInit {
 
   constructor(public canvasService: CanvasService) { }
 
-  ngOnInit() {
-    this.getData();
+  addNode (label: string) {
+    this.hierarchialGraph.nodes.push({id: label, label: label});
   }
 
   getData() {
     const canvas = this.canvasService.getCanvas('test');
     console.log(canvas);
+  }
+
+  ngOnInit() {
+    this.getData();
+    this.addNode('hello');
   }
 
 }
