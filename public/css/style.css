@@ -1,4 +1,4 @@
-.main-btn {
+/* .main-btn {
     display:inline-block;
     color:#444;
     border:1px solid #CCC;
@@ -13,9 +13,11 @@
 .main-btn:active {
     color:red;
     box-shadow: 0 0 5px -1px rgba(0,0,0,0.6);
-}
+} */
 
 .wrapper {
+    margin-top: 50px;
+    text-align: center;
     background-color: rgba(255,255,255,0.6);
     padding: 10px;
 }
