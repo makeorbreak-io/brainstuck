@@ -15,13 +15,17 @@ import { AuthService } from './core/auth.service';
 import { UserService } from './core/user.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgxGraphModule } from '@swimlane/ngx-graph';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { CanvasComponent } from './canvas/canvas.component';
+import { TopNavComponent } from './ui/top-nav/top-nav.component';
 import { MaterialModule } from './material.module';
-
 
 @NgModule({
   declarations: [
@@ -29,7 +33,8 @@ import { MaterialModule } from './material.module';
     LoginComponent,
     UserComponent,
     RegisterComponent,
-    CanvasComponent
+    CanvasComponent,
+    TopNavComponent
   ],
   imports: [
     BrowserModule,
@@ -41,6 +46,10 @@ import { MaterialModule } from './material.module';
     BrowserAnimationsModule,
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features
+    BsDropdownModule.forRoot(),
+    TooltipModule.forRoot(),
+    ModalModule.forRoot(),
+    NgbModule.forRoot(),
     MaterialModule
   ],
   providers: [AuthService, UserService, UserResolver, AuthGuard],
