@@ -17,13 +17,15 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {NgxGraphModule} from '@swimlane/ngx-graph';
 
 import { AppComponent } from './app.component';
+import { CanvasComponent } from './canvas/canvas.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     UserComponent,
-    RegisterComponent
+    RegisterComponent,
+    CanvasComponent
   ],
   imports: [
     BrowserModule,
